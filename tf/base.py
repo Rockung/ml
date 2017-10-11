@@ -13,9 +13,10 @@ mat2 = tf.constant([[2.], [2.]])
 product = tf.matmul(mat1, mat2)
 
 # step 2. create a session
+# ========================
 sess = tf.Session()
 
 # step 3. computing
-
+# =================
 result = sess.run([product])
 print(result)
