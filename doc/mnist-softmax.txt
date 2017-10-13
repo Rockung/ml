@@ -1,0 +1,41 @@
+MNIST: image/label pairs for digits
+  mnist.train.images: 55000
+  mnist.train.labels: 55000
+  mnist.test
+  mnist.validation
+  
+softmax regression
+  multinominal logistic
+
+image: 28 x28
+  flatten to 784-dimensional vector space
+  mnist.train.images: 55000x784
+
+label: 10(0,1,2,3,4,5,6,7,8,9)
+  mnist.train.labels: 55000x10
+  
+one-hot vector
+  0 - in most dimensions
+  1 - in a single dimension
+
+training model
+  define what it means for the model
+    to be good
+    to be bad
+
+cost/lost
+  how far off our models is from our desired outcome
+
+minimize the error
+  the smaller the error margin, the better our model is
+
+cross-entropy
+  how inefficient our predictions are for describing the truth
+
+graph computation
+  add new operations to the graph which implement  
+    backpropagation algorithm
+    gradient descent algorithm
+  
+  
+  
