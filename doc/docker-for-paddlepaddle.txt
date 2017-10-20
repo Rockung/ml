@@ -1,0 +1,8 @@
+docker run -it -v ~/workspace:/workspace paddlepaddle/paddle:0.10.0 /bin/bash
+# now we are inside docker container
+cd /workspace
+python example.py
+
+
+# accellerator
+docker pull registry.docker-cn.com/paddlepaddle/book
