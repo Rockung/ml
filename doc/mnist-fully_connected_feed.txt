@@ -1,0 +1,30 @@
+FLAGS
+===============================================================
+input_data_dir       tensorflow/mnist/input_data
+log_dir              tensorflow/mnist/logs/fully_connected_feed
+batch_size           100
+max_steps            2000
+learning_rate        0.01
+hidden1              128
+hidden2              32
+fake_data            False
+
+Layers
+=====================================
+input:   100x784
+hidden1: 100x128
+hidden2: 100x32
+softmax: 100x10
+
+IMAGE_SIZE   = 28
+IMAGE_PIXELS = IMAGE_SIZE * IMAGE_SIZE = 784
+NUM_CLASSES  = 10
+
+Placeholders
+=====================================
+images_placeholder
+    batch_size    100
+    IMAGE_PIXELS  784
+labels_placeholder
+    batch_size    100
+
