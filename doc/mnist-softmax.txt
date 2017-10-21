@@ -32,10 +32,20 @@ minimize the error
 cross-entropy
   how inefficient our predictions are for describing the truth
 
-graph computation
+computation graph
   add new operations to the graph which implement  
     backpropagation algorithm
     gradient descent algorithm
+
+steps
+  load data
+  build a model
+  train the model
+  evaluate the model
   
-  
-  
+the model
+  placeholders
+  variables
+  predicted class
+  loss function
+

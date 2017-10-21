@@ -1,2 +1,7 @@
 http://mccormickml.com/tutorials/
+https://graphics.stanford.edu/courses/cs178/applets/convolution.html
+http://www.cs.toronto.edu/~graves/
+http://www.wildml.com/2015/09/recurrent-neural-networks-tutorial-part-1-introduction-to-rnns/
+https://en.wikipedia.org/wiki/Bidirectional_recurrent_neural_networks
+https://github.com/hycis/bidirectional_RNN
 
