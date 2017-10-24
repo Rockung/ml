@@ -1,0 +1,18 @@
+sudo pip3 install tensorflow==1.1.0
+
+sudo pip3 install numpy        --upgrade
+sudo pip3 install matplotlib   --upgrade
+sudo pip3 install scikit-image --upgrade
+sudo pip3 install librosa      --upgrade
+sudo pip3 install nltk         --upgrade
+sudo pip3 install keras        --upgrade
+sudo pip3 install tflearn      --upgrade
+
+# verification
+import tensorflow as tf
+hello = tf.constant('Hello, TensorFlow!')
+sess = tf.Session()
+print(sess.run(hello))
+
+# tensorboard
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/tensorflow/tensorboard/tensorboard.py
