@@ -1,0 +1,15 @@
+python3 convert-to-tfrecords.py --directory=./nlintz/MNIST_data
+
+tf.train.Example
+tf.train.Feature
+tf.python_io.TFRecordWriter
+
+
+python3 tfrecords-reader.py --train_dir=./nlintz/MNIST_data
+
+tf.parse_single_example
+tf.decode_raw
+tf.train.string_input_producer
+tf.train.shuffle_batch
+tf.train.Coordinator
+tf.train.start_queue_runners
