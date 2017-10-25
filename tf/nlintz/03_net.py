@@ -9,28 +9,25 @@ def init_weights(shape):
     return tf.Variable(tf.random_normal(shape, stddev=0.01))
 
 
-# notice we use the same model as linear regression, this is because there is a baked in cost function
-# which performs softmax and cross entropy
-def model(X, w):
-    return tf.matmul(X, w)
+def model(X, w_h, w_o):
+    h = tf.nn.sigmoid(tf.matmul(X, w_h)) # this is a basic mlp, think 2 stacked logistic regressions
+    return tf.matmul(h, w_o) # note that we dont take the softmax at the end because our cost fn does that for us
 
 
 mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
 trX, trY, teX, teY = mnist.train.images, mnist.train.labels, mnist.test.images, mnist.test.labels
 
-X = tf.placeholder("float", [None, 784]) # create symbolic variables
+X = tf.placeholder("float", [None, 784])
 Y = tf.placeholder("float", [None, 10])
 
-# like in linear regression, we need a shared variable weight matrix for logistic regression
-w = init_weights([784, 10])
+w_h = init_weights([784, 625]) # create symbolic variables
+w_o = init_weights([625, 10])
 
-py_x = model(X, w)
+py_x = model(X, w_h, w_o)
 
-# compute mean cross entropy (softmax is applied internally)
-cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=py_x, labels=Y))
-
-train_op = tf.train.GradientDescentOptimizer(0.05).minimize(cost) # construct optimizer
-predict_op = tf.argmax(py_x, 1) # at predict time, evaluate the argmax of the logistic regression
+cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=py_x, labels=Y)) # compute costs
+train_op = tf.train.GradientDescentOptimizer(0.05).minimize(cost) # construct an optimizer
+predict_op = tf.argmax(py_x, 1)
 
 # Launch the graph in a session
 with tf.Session() as sess:
