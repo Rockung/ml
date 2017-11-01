@@ -10,4 +10,3 @@ img = misc.imread('filename')
 AttributeError: 'module' object has no attribute 'imread'
 pip install pillow
 
-
