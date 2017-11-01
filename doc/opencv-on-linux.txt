@@ -1,3 +1,13 @@
 https://jingyan.baidu.com/article/14bd256e466474bb6d2612db.html
 http://blog.csdn.net/hjl240/article/details/51520003
 
+
+from scipy import misc
+img = misc.imread('filename')
+
+## imread needs 'pillow'
+
+AttributeError: 'module' object has no attribute 'imread'
+pip install pillow
+
+
