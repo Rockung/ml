@@ -1,0 +1,8 @@
+ERROR: LoadError: SpecialFunctions is not installed properly
+1. install openspecfun
+   git clone https://github.com/JuliaMath/openspecfun.git
+   make clean && make && make install
+2. cd ~/.julia/packages 
+   rm SpecialFunctions
+3. (v1.0) pkg> add SpecialFunctions
+   using SpecialFunctions
