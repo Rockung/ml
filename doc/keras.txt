@@ -1,0 +1,7 @@
+installing keras on windows 10
+
+  1. needing install pyyaml manually
+    https://github.com/yaml/pyyaml/releases
+    
+  2. using pip
+    pip install keras
