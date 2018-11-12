@@ -6,3 +6,28 @@ ERROR: LoadError: SpecialFunctions is not installed properly
    rm SpecialFunctions
 3. (v1.0) pkg> add SpecialFunctions
    using SpecialFunctions
+
+import nltk
+nltk.download()
+提示：certificate verity failed
+运行：sudo /Applications/Python 3.6/Install Certificates.command
+
+
+sudo pip3 install mysqlclient
+brew install mysql-connector-c
+# 修改前先备份 
+cp  mysql_config mysql_config_backup
+# 修改编辑权限
+chmod 777 mysql_config
+vi mysql_config
+# 修改114行
+> # Create options 
+> libs="-L$pkglibdir"
+> libs="$libs -l "
+# 修改为
+> # Create options 
+> libs="-L$pkglibdir"
+> libs="$libs -lmysqlclient -lssl -lcrypto"
+ln -s /usr/lib/libssl.xx.dylib /usr/local/lib/libssl.dylib
+ln -s /usr/lib/libcrypto.xx.dylib /usr/local/lib/libcrypto.dylib
+
