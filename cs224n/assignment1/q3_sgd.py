@@ -33,9 +33,10 @@ def load_saved_params():
 
 
 def save_params(iter, params):
-    with open("saved_params_%d.npy" % iter, "w") as f:
-        pickle.dump(params, f)
-        pickle.dump(random.getstate(), f)
+    pass
+    # with open("saved_params_%d.npy" % iter, "w") as f:
+        # pickle.dump(params, f)
+        # pickle.dump(random.getstate(), f)
 
 
 def sgd(f, x0, step, iterations, postprocessing=None, useSaved=False,
