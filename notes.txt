@@ -31,3 +31,17 @@ vi mysql_config
 ln -s /usr/lib/libssl.xx.dylib /usr/local/lib/libssl.dylib
 ln -s /usr/lib/libcrypto.xx.dylib /usr/local/lib/libcrypto.dylib
 
+pickle.dump(params, f)
+TypeError: write() argument must be str, not bytes
+python 3可能改动啥的了吧，查查手册先，估计必要2进制模式开档open(shoplistfile, "wb")
+f = open('varstor.txt','wb')
+
+import pickle
+l=[1,2,3]
+f = open("hello.txt", "wb")#二进制！
+#f.write(l)
+pickle.dump(l,f)
+with open("hello.txt", "rb") as f:
+    x = pickle.load(f)
+    print(x)
+    

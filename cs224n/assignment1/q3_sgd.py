@@ -7,10 +7,7 @@ import glob
 import random
 import numpy as np
 import os.path as op
-# import cPickle as pickle
-from past.builtins import xrange
-from six.moves import cPickle as pickle
-
+import pickle
 
 def load_saved_params():
     """
@@ -24,7 +21,7 @@ def load_saved_params():
             st = iter
 
     if st > 0:
-        with open("saved_params_%d.npy" % st, "r") as f:
+        with open("saved_params_%d.npy" % st, "rb") as f:
             params = pickle.load(f)
             state = pickle.load(f)
         return st, params, state
@@ -33,10 +30,9 @@ def load_saved_params():
 
 
 def save_params(iter, params):
-    pass
-    # with open("saved_params_%d.npy" % iter, "w") as f:
-        # pickle.dump(params, f)
-        # pickle.dump(random.getstate(), f)
+    with open("saved_params_%d.npy" % iter, "wb") as f:
+        pickle.dump(params, f)
+        pickle.dump(random.getstate(), f)
 
 
 def sgd(f, x0, step, iterations, postprocessing=None, useSaved=False,
@@ -82,7 +78,7 @@ def sgd(f, x0, step, iterations, postprocessing=None, useSaved=False,
 
     expcost = None
 
-    for iter in xrange(start_iter + 1, iterations + 1):
+    for iter in range(start_iter + 1, iterations + 1):
         # Don't forget to apply the postprocessing after every iteration!
         # You might want to print the progress every few iterations.
 
@@ -137,7 +133,16 @@ def your_sanity_checks():
     """
     print("Running your sanity checks...")
     ### YOUR CODE HERE
-    raise NotImplementedError
+    #raise NotImplementedError
+    # quad = lambda x: (np.sum(x ** 2), x * 2)
+
+    # print("Running sanity checks...")
+    # t1 = sgd(quad, 0.5, 0.01, 5000, PRINT_EVERY=100, useSaved=True)
+    # print("test 1 result:", t1)
+    # assert abs(t1) <= 1e-6
+    
+    st, params, state = load_saved_params()
+    print(st, state)
     ### END YOUR CODE
 
 
